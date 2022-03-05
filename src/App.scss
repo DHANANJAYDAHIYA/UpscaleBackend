@@ -1,0 +1,11 @@
+.App {
+  overflow: hidden;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  .admin__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

@@ -9,7 +9,7 @@ const config= {
         enabledArithAbout: true,
         instancename: 'SQLEXPRESS' //
     },
-    port1234:  // tcp ip was not on
+    port: 1234 // tcp ip was not on
 }
 
 module.exports = config;

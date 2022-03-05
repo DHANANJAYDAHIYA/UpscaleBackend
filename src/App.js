@@ -4,7 +4,7 @@ import React, {useState}from 'react'
 
 
 // import Navbar from './Components/Navbar.js'
-import Card from './Components/Card.js'
+import Card from './Components/Card/Card.js'
 function App() {
   const [returnedData, SetReturnedData]= useState(['Hello']);
   const [mentor, SetMentor] = useState({

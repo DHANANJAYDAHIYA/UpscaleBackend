@@ -1,17 +1,23 @@
 import "./AddMentor.scss";
 
+import ClearIcon from "@mui/icons-material/Clear";
+import React from "react";
+
 const AddMentor = ({setaddmentorOpen, addmentorOpen}) => {
+  const handleCross = () => {
+    setaddmentorOpen(!addmentorOpen);
+  };
   const onSubmit = (e) => {
     e.preventDefault();
     setaddmentorOpen(!addmentorOpen);
     console.log("submitted");
   };
   return (
-    <form
-      className="mentorForm"
-     
-      onSubmit={onSubmit}>
-      <h1>Add a mentor</h1>
+    <form className="mentorForm" onSubmit={onSubmit}>
+      <div className="form-header">
+        <h1>Add a mentor</h1>
+        <ClearIcon className="icon" onClick={handleCross} />
+      </div>
       <input type="number" name="MentorID" placeholder="Mentor ID"></input>
       <input name="MentorNAME" placeholder="Full Name"></input>
       <input name="MentorEMAIL" placeholder="Email"></input>

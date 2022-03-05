@@ -59,8 +59,13 @@ function App() {
       </div>
       <div className="wrapper">
         <div className="admin__header">
-          <h2>search</h2>
-          <button onClick={handleAddMentor}>Add Mentor</button>
+          <div className="search">
+            <input type="text" className="search-bar" placeholder="Search.." />
+            <button>search</button>
+          </div>
+          <button className="button1" onClick={handleAddMentor}>
+            Add Mentor
+          </button>
         </div>
 
         <div className="cards row row-cols-1 row-cols-md-5 g-1 mx-4 my-2">

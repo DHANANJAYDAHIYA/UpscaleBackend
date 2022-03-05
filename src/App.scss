@@ -11,9 +11,33 @@
     justify-content: center;
     flex-direction: column;
     .admin__header {
+      padding: 0 10px;
       display: flex;
+      width: 100%;
       align-items: center;
       justify-content: space-between;
+      .search {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 7px;
+        width: 90%;
+        .search-bar {
+          width: 70%;
+          margin-right: 10px;
+          border-radius: 10px;
+        }
+      }
+      .button1 {
+        border: 1px solid black;
+        margin-top: 7px;
+        border-radius: 10px;
+      }
+      button {
+        border: 1px solid black;
+        border-radius: 10px;
+        background-color: rgb(167, 224, 247);
+      }
     }
   }
   .addmentor-container {

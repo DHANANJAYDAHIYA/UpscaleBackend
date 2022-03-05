@@ -1,6 +1,7 @@
 import "./AddMentor.scss";
 
 const AddMentor = (addmentorOpen) => {
+  const {active} = addmentorOpen;
   const onSubmit = (e) => {
     e.preventDefault();
     console.log("submitted");
@@ -8,7 +9,7 @@ const AddMentor = (addmentorOpen) => {
   return (
     <form
       className="mentorForm"
-      style={addmentorOpen === true ? {display: "none"} : {}}
+      style={active === true ? {display: "none"} : {}}
       onSubmit={onSubmit}>
       <h1>Add a mentor</h1>
       <input type="number" name="MentorID" placeholder="Mentor ID"></input>

@@ -1,0 +1,15 @@
+.mentorForm {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  input {
+    margin: 5px;
+    width: 500px;
+    padding: 5px;
+  }
+  &.active {
+    display: none;
+  }
+}

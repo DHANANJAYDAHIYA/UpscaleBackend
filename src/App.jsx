@@ -54,55 +54,59 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <div className="admin__header">
-        <h2>search</h2>
-        <button onClick={handleAddMentor}>Add Mentor</button>
+      <div className="addmentor-container" style={addmentorOpen === true ? {display: "none"} : {}}>
+        <AddMentor setaddmentorOpen={setaddmentorOpen} addmentorOpen={addmentorOpen} />
       </div>
-      <AddMentor active={addmentorOpen} />
+      <div className="wrapper">
+        <div className="admin__header">
+          <h2>search</h2>
+          <button onClick={handleAddMentor}>Add Mentor</button>
+        </div>
 
-      <div className="row row-cols-1 row-cols-md-5 g-1 mx-4 my-2">
-        <Card
-          title="Dhananjay Dahiya"
-          des="I am a developer asbjdwbnqoindqjpwmdwq"
-          imge="https://t3.ftcdn.net/jpg/02/22/85/16/360_F_222851624_jfoMGbJxwRi5AWGdPgXKSABMnzCQo9RN.jpg"
-          createdat="2015-07-20"
-        />
-        <Card
-          title="Dhananjay Dahiya"
-          des="I am a developer asbjdwbnqoindqjpwmdwq"
-          imge="https://t3.ftcdn.net/jpg/02/22/85/16/360_F_222851624_jfoMGbJxwRi5AWGdPgXKSABMnzCQo9RN.jpg"
-          createdat="2015-07-20"
-        />
-        <Card
-          title="Dhananjay Dahiya"
-          des="I am a developer asbjdwbnqoindqjpwmdwq"
-          imge="https://t3.ftcdn.net/jpg/02/22/85/16/360_F_222851624_jfoMGbJxwRi5AWGdPgXKSABMnzCQo9RN.jpg"
-          createdat="2015-07-20"
-        />
-        <Card
-          title="Dhananjay Dahiya"
-          des="I am a developer asbjdwbnqoindqjpwmdwq"
-          imge="https://t3.ftcdn.net/jpg/02/22/85/16/360_F_222851624_jfoMGbJxwRi5AWGdPgXKSABMnzCQo9RN.jpg"
-          createdat="2015-07-20"
-        />
-        <Card
-          title="Dhananjay Dahiya"
-          des="I am a developer asbjdwbnqoindqjpwmdwq"
-          imge="https://t3.ftcdn.net/jpg/02/22/85/16/360_F_222851624_jfoMGbJxwRi5AWGdPgXKSABMnzCQo9RN.jpg"
-          createdat="2015-07-20"
-        />
-        <Card
-          title="Dhananjay Dahiya"
-          des="I am a developer asbjdwbnqoindqjpwmdwq"
-          imge="https://t3.ftcdn.net/jpg/02/22/85/16/360_F_222851624_jfoMGbJxwRi5AWGdPgXKSABMnzCQo9RN.jpg"
-          createdat="2015-07-20"
-        />
-        <Card
-          title="Dhananjay Dahiya"
-          des="I am a developer asbjdwbnqoindqjpwmdwq"
-          imge="https://t3.ftcdn.net/jpg/02/22/85/16/360_F_222851624_jfoMGbJxwRi5AWGdPgXKSABMnzCQo9RN.jpg"
-          createdat="2015-07-20"
-        />
+        <div className="cards row row-cols-1 row-cols-md-5 g-1 mx-4 my-2">
+          <Card
+            title="Dhananjay Dahiya"
+            des="I am a developer asbjdwbnqoindqjpwmdwq"
+            imge="https://t3.ftcdn.net/jpg/02/22/85/16/360_F_222851624_jfoMGbJxwRi5AWGdPgXKSABMnzCQo9RN.jpg"
+            createdat="2015-07-20"
+          />
+          <Card
+            title="Dhananjay Dahiya"
+            des="I am a developer asbjdwbnqoindqjpwmdwq"
+            imge="https://t3.ftcdn.net/jpg/02/22/85/16/360_F_222851624_jfoMGbJxwRi5AWGdPgXKSABMnzCQo9RN.jpg"
+            createdat="2015-07-20"
+          />
+          <Card
+            title="Dhananjay Dahiya"
+            des="I am a developer asbjdwbnqoindqjpwmdwq"
+            imge="https://t3.ftcdn.net/jpg/02/22/85/16/360_F_222851624_jfoMGbJxwRi5AWGdPgXKSABMnzCQo9RN.jpg"
+            createdat="2015-07-20"
+          />
+          <Card
+            title="Dhananjay Dahiya"
+            des="I am a developer asbjdwbnqoindqjpwmdwq"
+            imge="https://t3.ftcdn.net/jpg/02/22/85/16/360_F_222851624_jfoMGbJxwRi5AWGdPgXKSABMnzCQo9RN.jpg"
+            createdat="2015-07-20"
+          />
+          <Card
+            title="Dhananjay Dahiya"
+            des="I am a developer asbjdwbnqoindqjpwmdwq"
+            imge="https://t3.ftcdn.net/jpg/02/22/85/16/360_F_222851624_jfoMGbJxwRi5AWGdPgXKSABMnzCQo9RN.jpg"
+            createdat="2015-07-20"
+          />
+          <Card
+            title="Dhananjay Dahiya"
+            des="I am a developer asbjdwbnqoindqjpwmdwq"
+            imge="https://t3.ftcdn.net/jpg/02/22/85/16/360_F_222851624_jfoMGbJxwRi5AWGdPgXKSABMnzCQo9RN.jpg"
+            createdat="2015-07-20"
+          />
+          <Card
+            title="Dhananjay Dahiya"
+            des="I am a developer asbjdwbnqoindqjpwmdwq"
+            imge="https://t3.ftcdn.net/jpg/02/22/85/16/360_F_222851624_jfoMGbJxwRi5AWGdPgXKSABMnzCQo9RN.jpg"
+            createdat="2015-07-20"
+          />
+        </div>
       </div>
     </div>
   );

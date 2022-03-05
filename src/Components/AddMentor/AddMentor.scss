@@ -1,4 +1,9 @@
 .mentorForm {
+  position: absolute;
+  z-index: 2;
+  background-color: #fff;
+  border: 2px solid black;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   flex-direction: column;

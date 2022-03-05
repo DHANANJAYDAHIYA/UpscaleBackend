@@ -35,16 +35,19 @@ function App() {
   }
   const fetchData = async () => {
     console.log(mentor);
-    // const newData = await fetch('/hello', {
-    //   method: 'GET',
-    //   headers: {
-    //     'Content-type': 'application/json',
-    //     'Accept': 'application/json'
-    //   }
-    // })
-    // .then(res=> res.json())
-    // console.log(newData);
-    // SetReturnedData(newData.result)
+    const newData = await fetch('/hello', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        name: mentor.Fullname
+      })
+    })
+    .then(res=> res.json())
+    console.log(newData);
+    SetReturnedData(newData[0])
   }
   return (
     <div className="App">
@@ -52,9 +55,17 @@ function App() {
               <a className="navbar-brand">Navbar</a>
               <form className="form-inline">
                   <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
-                  <button className="btn btn-outline-success my-2 my-sm-0" type="submit" onClick={()=>fetchData()}>Search</button>
-                  <button className="btn btn-outline-success my-2 my-sm-0" type="submit" onClick={()=>fetchData()}>Create</button>
-                
+                  <button className="btn btn-outline-success my-2 my-sm-0" onClick={()=>fetchData()}>Search</button>
+                  <button className="btn btn-outline-success my-2 my-sm-0" onClick={()=>fetchData()}>Create</button>
+                  <input type = "number" name="MentorID" placeholder="Mentor ID" onChange={setInput}></input>
+                  <input  name="MentorNAME" placeholder="Full Name" onChange={setInput}></input>
+                  <input name="CreatedON" placeholder="Created On" onChange={setInput}></input>
+                  <input name="MentorEMAIL" placeholder="Email" onChange={setInput}></input>
+                  <input name="MentorPH" placeholder="Phone No." onChange={setInput}></input>
+                  <input name="MentorLINKEDIN" placeholder="Linkedin ID" onChange={setInput}></input>
+                  <input name="MentorINSTA" placeholder="Insta ID" onChange={setInput}></input>
+                  <input name="MentorPM" placeholder="Placements" onChange={setInput}></input>
+    
               </form>
           </nav>
           {/* <p>MentorID:{returnedData.MentorID}</p>
@@ -65,15 +76,7 @@ function App() {
           <p>MentorLINKEDIN:{returnedData.MentorLINKEDIN}</p>
           <p>MentorINSTA:{returnedData.MentorINSTA}</p>
           <p>MentorPM:{returnedData.MentorPM}</p> */}
-        <input type = "number" name="MentorID" placeholder="Mentor ID" onChange={setInput}></input>
-        <input  name="MentorNAME" placeholder="Full Name" onChange={setInput}></input>
-        <input name="CreatedON" placeholder="Created On" onChange={setInput}></input>
-        <input name="MentorEMAIL" placeholder="Email" onChange={setInput}></input>
-        <input name="MentorPH" placeholder="Phone No." onChange={setInput}></input>
-        <input name="MentorLINKEDIN" placeholder="Linkedin ID" onChange={setInput}></input>
-        <input name="MentorINSTA" placeholder="Insta ID" onChange={setInput}></input>
-        <input name="MentorPM" placeholder="Placements" onChange={setInput}></input>
-    
+        
         <div className="row row-cols-1 row-cols-md-5 g-1 mx-4 my-2">
           <Card title="Dhananjay Dahiya" des="I am a developer asbjdwbnqoindqjpwmdwq" imge="https://t3.ftcdn.net/jpg/02/22/85/16/360_F_222851624_jfoMGbJxwRi5AWGdPgXKSABMnzCQo9RN.jpg" createdat="2015-07-20"/>
           <Card title="Dhananjay Dahiya" des="I am a developer asbjdwbnqoindqjpwmdwq" imge="https://t3.ftcdn.net/jpg/02/22/85/16/360_F_222851624_jfoMGbJxwRi5AWGdPgXKSABMnzCQo9RN.jpg" createdat="2015-07-20"/>

@@ -1,9 +1,9 @@
 const config= require('./dbconfig.js'),
 sql =require('mssql');
-const getMentors = async()=> {
+const getMentors = async(firstname)=> {
     try{
         let pool = await sql.connect(config);
-        let Mentors= pool.request().query("SELECT * from MentorInfo")
+        let Mentors= pool.request().query(`SELECT * from MentorInfo where firstname = '${firstname}'`)
         console.log(Mentors);
         return Mentors;
     }
@@ -14,7 +14,7 @@ const getMentors = async()=> {
 const CreateMentors = async(Mentor)=> {
     try{
         let pool = await sql.connect(config);
-        let Mentors= pool.request().query(`INSERT INTO MentorInfo VALUES
+        let Mentors= await pool.request().query(`INSERT INTO MentorInfo VALUES
         (   ${Mentor.MentorID},
             '${Mentor.MentorNAME}',
             '${Mentor.CreatedOn}',

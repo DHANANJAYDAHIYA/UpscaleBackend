@@ -12,52 +12,6 @@ const AddMentor = ({setaddmentorOpen, addmentorOpen}) => {
     setaddmentorOpen(!addmentorOpen);
     console.log("submitted");
   };
-
-  const [returnedData, SetReturnedData] = useState(["Hello"]);
-  const [mentor, SetMentor] = useState({
-    MentorID: 0,
-    MentorNAME: "",
-    CreatedOn: "",
-    MentorEMAIL: "",
-    MentorPH: "",
-    MentorLINKEDIN: "",
-    MentorINSTA: "",
-    MentorPM: "",
-  });
-
-  const setInput = (e) => {
-    const {name, value} = e.target;
-    console.log(value);
-    if (name === "MentorID") {
-      SetMentor((prevState) => ({
-        ...prevState,
-        [name]: parseInt(value),
-      }));
-      return;
-    }
-    SetMentor((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-  };
-  const fetchData = async () => {
-    console.log(mentor);
-    const newData = await fetch('/api', {
-      method: 'POST',
-      headers: {
-        'Content-type': 'application/json',
-        'Accept': 'application/json'
-      },
-      body: JSON.stringify(
-        {
-          name : mentor.MentorNAME
-        }
-      )
-    })
-    .then(res=> res.json())
-    console.log(newData);
-    SetReturnedData(newData[0])
-  };
   return (
     <form className="mentorForm" onSubmit={onSubmit}>
       <div className="form-header">

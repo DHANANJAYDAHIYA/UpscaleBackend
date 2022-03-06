@@ -11,46 +11,7 @@ function App() {
     console.log(addmentorOpen);
     setaddmentorOpen(!addmentorOpen);
   };
-  const [returnedData, SetReturnedData] = useState(["Hello"]);
-  const [mentor, SetMentor] = useState({
-    MentorID: 0,
-    MentorNAME: "",
-    CreatedOn: "",
-    MentorEMAIL: "",
-    MentorPH: "",
-    MentorLINKEDIN: "",
-    MentorINSTA: "",
-    MentorPM: "",
-  });
-
-  const setInput = (e) => {
-    const {name, value} = e.target;
-    console.log(value);
-    if (name === "MentorID") {
-      SetMentor((prevState) => ({
-        ...prevState,
-        [name]: parseInt(value),
-      }));
-      return;
-    }
-    SetMentor((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-  };
-  const fetchData = async () => {
-    console.log(mentor);
-    // const newData = await fetch('/hello', {
-    //   method: 'GET',
-    //   headers: {
-    //     'Content-type': 'application/json',
-    //     'Accept': 'application/json'
-    //   }
-    // })
-    // .then(res=> res.json())
-    // console.log(newData);
-    // SetReturnedData(newData.result)
-  };
+ 
   return (
     <div className="App">
       <Navbar />

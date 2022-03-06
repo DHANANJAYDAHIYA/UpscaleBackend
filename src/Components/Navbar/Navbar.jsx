@@ -3,10 +3,10 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <div className="left">
-        <h1>Logo</h1>
+        <h1>Upscale</h1>
       </div>
       <div className="right">
-        <h1>hamburger</h1>
+        <h5>Login</h5>
       </div>
     </div>
   );

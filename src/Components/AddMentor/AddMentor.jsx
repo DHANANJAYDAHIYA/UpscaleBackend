@@ -1,19 +1,11 @@
 import "./AddMentor.scss";
-
 import ClearIcon from "@mui/icons-material/Clear";
-import React, {useState} from "react";
+import MentorContext from "../../contexts/mentor/MentorContext";
+import {useContext} from "react";
 
 const AddMentor = ({setaddmentorOpen, addmentorOpen}) => {
-  const [mentor, setmentor] = useState({
-    MentorID: 0,
-    MentorNAME: "",
-    CreatedOn: "",
-    MentorEMAIL: "",
-    MentorPH: "",
-    MentorLINKEDIN: "",
-    MentorINSTA: "",
-    MentorPM: "",
-  });
+  const context = useContext(MentorContext);
+  const {mentor, setmentor} = context;
 
   const handleCross = () => {
     setaddmentorOpen(!addmentorOpen);

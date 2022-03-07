@@ -47,8 +47,10 @@ router.route('/MentorEle').post((request,response)=>{
     let Mentor = {...request.body}
 
     dboperations.addMentor(Mentor).then(result => {
-       response.status(201).json(result);
+       response.json(result);
     })
+
+   //  response.json(Mentor);
 
 })
 

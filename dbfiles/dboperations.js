@@ -43,8 +43,10 @@ async function addMentor(Mentor) {
             .input('MentorINSTA', sql.NVarChar, Mentor.MentorINSTA)
             .input('MentorPM', sql.NVarChar, Mentor.MentorPM)
             .execute('INSERTDATA');
-            
-        return InsertMentorpro.recordsets;
+
+        return Mentor;
+
+
     }
     catch (err) {
         console.log(err);

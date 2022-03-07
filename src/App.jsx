@@ -35,19 +35,19 @@ function App() {
 
           <div className="cards row row-cols-1 row-cols-md-5 g-1 mx-4 my-2">
             <Card
-              title="Dhananjay Dahiya"
+              title="asdf asdf"
               des="I am a developer asbjdwbnqoindqjpwmdwq"
               imge="https://t3.ftcdn.net/jpg/02/22/85/16/360_F_222851624_jfoMGbJxwRi5AWGdPgXKSABMnzCQo9RN.jpg"
               createdat="2015-07-20"
             />
             <Card
-              title="Dhananjay Dahiya"
+              title="asdfasdfasfas"
               des="I am a developer asbjdwbnqoindqjpwmdwq"
               imge="https://t3.ftcdn.net/jpg/02/22/85/16/360_F_222851624_jfoMGbJxwRi5AWGdPgXKSABMnzCQo9RN.jpg"
               createdat="2015-07-20"
             />
             <Card
-              title="Dhananjay Dahiya"
+              title="asd1234"
               des="I am a developer asbjdwbnqoindqjpwmdwq"
               imge="https://t3.ftcdn.net/jpg/02/22/85/16/360_F_222851624_jfoMGbJxwRi5AWGdPgXKSABMnzCQo9RN.jpg"
               createdat="2015-07-20"

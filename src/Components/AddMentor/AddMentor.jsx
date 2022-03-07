@@ -13,9 +13,6 @@ const AddMentor = ({setaddmentorOpen, addmentorOpen}) => {
 
   const onChange = (e) => {
     const re = /^[0-9\b]+$/;
-
-    // if value is not blank, then test the regex
-
     if (e.target.value === "" || re.test(e.target.value)) {
       this.setState({value: e.target.value});
     }

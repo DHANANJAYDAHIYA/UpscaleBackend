@@ -2,8 +2,8 @@ import {useState} from "react";
 import MentorContext from "./MentorContext";
 
 const MentorState = (props) => {
-  const mentorList = [];
 
+  const [mentorList, setmentorList] = useState([]);
   const [mentor, setmentor] = useState({
     MentorID: 0,
     MentorNAME: "",
@@ -16,7 +16,7 @@ const MentorState = (props) => {
   });
 
   return (
-    <MentorContext.Provider value={{mentor, setmentor}}>{props.children}</MentorContext.Provider>
+    <MentorContext.Provider value={{mentor, setmentor , mentorList}}>{props.children}</MentorContext.Provider>
   );
 };
 

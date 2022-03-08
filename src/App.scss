@@ -15,28 +15,33 @@
       display: flex;
       width: 100%;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
+
+      margin-top: 10px;
       .search {
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-top: 7px;
         width: 90%;
         .search-bar {
-          width: 70%;
+          width: 100%;
           margin-right: 10px;
           border-radius: 10px;
         }
       }
-      .button1 {
-        border: 1px solid black;
-        margin-top: 7px;
-        border-radius: 10px;
-      }
+
       button {
-        border: 1px solid black;
         border-radius: 10px;
-        background-color: rgb(167, 224, 247);
+        background-color: white;
+        border: 2px solid black;
+        color: black;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      button:hover {
+        background-color: crimson;
+        color: white;
+        border: 2px solid crimson;
       }
     }
   }
@@ -46,9 +51,40 @@
     height: 100%;
     width: 100%;
     display: flex;
-    align-items: center;
     justify-content: center;
     background-color: rgb(0, 0, 0, 0.7);
     transition: display 2s ease;
+  }
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h1 {
+      margin-top: 10px;
+    }
+    button {
+      border-radius: 10px;
+      width: 100px;
+      height: 30px;
+      background-color: crimson;
+      color: white;
+      cursor: pointer;
+      border: 1px solid crimson;
+      transition: all 0.3s ease;
+    }
+    button:hover {
+      font-size: 14px;
+      background-color: #fff;
+      color: black;
+      border: 2px solid black;
+    }
+  }
+  .mentorlist {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
   }
 }

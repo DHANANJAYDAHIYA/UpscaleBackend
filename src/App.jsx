@@ -17,14 +17,13 @@ function App() {
     <MentorState>
       <div className="App">
         <Navbar />
-
-        <div
-          className="addmentor-container"
-          style={addmentorOpen === true ? {display: "none"} : {}}>
-          <AddMentor setaddmentorOpen={setaddmentorOpen} addmentorOpen={addmentorOpen} />
-        </div>
-
         <div className="wrapper">
+          <div
+            className="addmentor-container"
+            style={addmentorOpen === true ? {display: "none"} : {}}>
+            <AddMentor setaddmentorOpen={setaddmentorOpen} addmentorOpen={addmentorOpen} />
+          </div>
+
           <div className="admin__header">
             <div className="search">
               <input type="text" className="search-bar" placeholder="Search.." />

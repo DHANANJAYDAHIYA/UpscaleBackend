@@ -1,5 +1,4 @@
 .App {
-  position: relative;
   overflow: hidden;
 
   &::-webkit-scrollbar {
@@ -10,6 +9,9 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    position: absolute;
+    top: 60px;
+
     .admin__header {
       padding: 0 10px;
       display: flex;
@@ -80,7 +82,6 @@
     }
   }
   .mentorlist {
-    width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;

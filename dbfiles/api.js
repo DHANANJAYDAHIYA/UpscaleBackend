@@ -42,7 +42,7 @@ router.route('/MentorEle/:id').get((request,response)=>{
 
 //--------------------------------------------------------------------------------------//
 //ADD MENTOR API
-router.route('/MentorEle').post((request,response)=>{
+router.route('/MentorEle/add').post((request,response)=>{
 
     let Mentor = {...request.body}
 

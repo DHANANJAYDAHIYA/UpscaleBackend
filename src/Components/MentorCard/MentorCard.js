@@ -24,5 +24,29 @@ const MentorCard = () => {
     </div>
   );
 };
-
+// $(function() {
+  
+// });
+  //     let html = "";
+  //     $.ajax({
+  //     url: "http://localhost:8090/api/MentorEle",
+  //     success: function(result) {
+  //       $.each(result, function(index, item) {
+  //         html +=
+  //           '<div class="card bg-light border-dark mb-3" style="max-width: 70rem;">';
+  //         html += `<div class="card-header">userid: ${item.MentorID} </div>`;
+  //         html += '<div class="card-body">';
+  //         html += `<h5 class="card-title">${item.MentorNAME}</h5>`;
+  //         html += `<p class="card-text">${item.MentorEMAIL}</p>`;
+  //         html += "</div>";
+  //         html += "</div>";
+  //         html += "</div>";
+  //         //using .html() will display one card,use loop to display each card
+  //       });
+  //       $(".container").html(html);
+  //     }
+  //   })
+  // )
+// };
+    
 export default MentorCard;

@@ -1,44 +1,51 @@
 import "./AddMentor.scss";
-import ClearIcon from "@mui/icons-material/Clear";
-import MentorContext from "../../contexts/mentor/MentorContext";
-import {useContext} from "react";
+import React, {useState} from 'react';
+import Axios from 'axios';
 
-const AddMentor = ({setaddmentorOpen, addmentorOpen}) => {
-  const context = useContext(MentorContext);
-  const {mentor, setmentor} = context;
-
-  const handleCross = () => {
-    setaddmentorOpen(!addmentorOpen);
-  };
-
-  const onChange = (e) => {
-    const re = /^[0-9\b]+$/;
-    if (e.target.value === "" || re.test(e.target.value)) {
-      this.setState({value: e.target.value});
-    }
-    setmentor({...mentor, [e.target.name]: e.target.value});
-    console.log(e.target.value);
-  };
-  const onSubmit = (e) => {
+function AddMentor(){
+  const url="http://localhost:8090/api/MentorEle/add";
+  const [mentor, setmentor]= useState({
+    MentorID: 0,
+    MentorNAME: "",
+    CreatedOn: "",
+    MentorEMAIL: "",
+    MentorPH: "",
+    MentorLINKEDIN: "",
+    MentorINSTA: "",
+    MentorPM: ""
+  })
+  function submit(e){
     e.preventDefault();
-    setaddmentorOpen(!addmentorOpen);
-    console.log("submitted");
-  };
-  return (
-    <form className="mentorForm" onSubmit={onSubmit}>
-      <div className="form-header">
-        <h1>Add a mentor</h1>
-        <ClearIcon className="icon" onClick={handleCross} />
-      </div>
-      <input type="text" name="MentorID" placeholder="Mentor ID" onChange={onChange} />
-      <input name="MentorNAME" placeholder="Full Name" onChange={onChange} />
-      <input name="MentorEMAIL" placeholder="Email" onChange={onChange} />
-      <input name="MentorPH" placeholder="Phone No." onChange={onChange} />
-      <input name="MentorLINKEDIN" placeholder="Linkedin ID" onChange={onChange} />
-      <input name="MentorPM" placeholder="Placements" onChange={onChange} />
-      <button type="submit">Add Mentor</button>
-    </form>
-  );
-};
-
+    Axios.post(url, {
+      MentorID :mentor.MentorID,
+      MentorNAME :mentor.MentorNAME,
+      CreatedOn :mentor.CreatedOn,
+      MentorEMAIL :mentor.MentorEMAIL,
+      MentorPH :mentor.MentorPH,
+      MentorLINKEDIN :mentor.MentorLINKEDIN,
+      MentorINSTA :mentor.MentorINSTA,
+      MentorPM :mentor.MentorPM
+    })
+  }
+  function handle(e){
+    const newmentor= {...mentor};
+    newmentor[e.target.id]=e.target.value;
+    setmentor(newmentor);
+    console.log(newmentor);
+  }
+  return(
+    <div>
+      <form onSubmit={(e) => submit(e)}>
+        <input onChange={(e)=>handle(e)} id="MentorID" value={mentor.MentorID} placeholder="MentorID" type="number" ></input>
+        <input onChange={(e)=>handle(e)} id="MentorNAME" value={mentor.MentorNAME} placeholder="MentorNAME" type="text" ></input>
+        <input onChange={(e)=>handle(e)} id="MentorEMAIL" value={mentor.MentorEMAIL} placeholder="MentorEMAIL" type="text" ></input>
+        <input onChange={(e)=>handle(e)} id="MentorPH" value={mentor.MentorPH} placeholder="MentorPH" type="text" ></input>
+        <input onChange={(e)=>handle(e)} id="MentorLINKEDIN" value={mentor.MentorLINKEDIN} placeholder="MentorLINKEDIN" type="text" ></input>
+        <input onChange={(e)=>handle(e)} id="MentorINSTA" value={mentor.MentorINSTA} placeholder="MentorINSTA" type="text" ></input>
+        <input onChange={(e)=>handle(e)} id="MentorPM" value={mentor.MentorPM} placeholder="MentorPM" type="text" ></input>
+        <button> SUBMIT</button>
+      </form>
+    </div>
+  )
+}
 export default AddMentor;

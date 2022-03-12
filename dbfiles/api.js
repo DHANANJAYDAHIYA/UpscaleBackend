@@ -18,7 +18,7 @@ app.use('/api', router);
 
 router.use((request,response,next)=>{
    console.log('middleware');
-   next();
+   next();   
 })
 //--------------------------------------------------------------------------------------//
 //FULL DATABASE TABLE API ROUTE
@@ -56,12 +56,17 @@ router.route('/MentorEle/add').post((request,response)=>{
 
 //--------------------------------------------------------------------------------------//
 //DELETE MENTOR API
-//TO DO
+router.route('/MentorEle/delete/:id').get((request,response)=>{
+
+   dboperations.deleteMentor(request.params.id).then(result => {
+      response.json(result);
+   })
+   
+})
 
 
 var port = process.env.PORT || 8090;
 app.listen(port);
 console.log('Order API is runnning at ' + port);
-
 
 

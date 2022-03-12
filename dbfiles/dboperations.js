@@ -54,8 +54,22 @@ async function addMentor(Mentor) {
 
 }
 //--------------------------------------------------------------------------------------//
+async function deleteMentor(MentorId) {
+    try {
+        let pool = await sql.connect(config);
+        let mentorpro = await pool.request()
+            .input('input_parameter', sql.Int, MentorId)
+            .query("DELETE from MentorInfo where MentorID = @input_parameter");
+        return mentorpro.recordsets;
+
+    }
+    catch (error) {
+        console.log(error);
+    }
+}
 module.exports = {
     getMentors: getMentors,
     getMentor : getMentor,
-    addMentor : addMentor
+    addMentor : addMentor,
+    deleteMentor : deleteMentor
 }

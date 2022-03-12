@@ -1,4 +1,4 @@
-import "./AddMentor.scss";
+import "./AddMentor.css";
 import React, {useState} from 'react';
 import Axios from 'axios';
 
@@ -25,7 +25,7 @@ function AddMentor(){
       MentorLINKEDIN :mentor.MentorLINKEDIN,
       MentorINSTA :mentor.MentorINSTA,
       MentorPM :mentor.MentorPM
-    })
+    }) 
   }
   function handle(e){
     const newmentor= {...mentor};
@@ -34,18 +34,37 @@ function AddMentor(){
     console.log(newmentor);
   }
   return(
-    <div>
-      <form onSubmit={(e) => submit(e)}>
-        <input onChange={(e)=>handle(e)} id="MentorID" value={mentor.MentorID} placeholder="MentorID" type="number" ></input>
-        <input onChange={(e)=>handle(e)} id="MentorNAME" value={mentor.MentorNAME} placeholder="MentorNAME" type="text" ></input>
-        <input onChange={(e)=>handle(e)} id="MentorEMAIL" value={mentor.MentorEMAIL} placeholder="MentorEMAIL" type="text" ></input>
-        <input onChange={(e)=>handle(e)} id="MentorPH" value={mentor.MentorPH} placeholder="MentorPH" type="text" ></input>
-        <input onChange={(e)=>handle(e)} id="MentorLINKEDIN" value={mentor.MentorLINKEDIN} placeholder="MentorLINKEDIN" type="text" ></input>
-        <input onChange={(e)=>handle(e)} id="MentorINSTA" value={mentor.MentorINSTA} placeholder="MentorINSTA" type="text" ></input>
-        <input onChange={(e)=>handle(e)} id="MentorPM" value={mentor.MentorPM} placeholder="MentorPM" type="text" ></input>
-        <button> SUBMIT</button>
+    <body>
+    <div className="container">
+      {/* <button onClick={setaddmentorOpen = {true}}></button> */}
+      <form id= "contact" onSubmit={(e) => submit(e)}>
+        <h3>Add New Mentor</h3>
+        <h4>Fill all the details in the form</h4>
+        <fieldset>
+          <input onChange={(e)=>handle(e)} id="MentorID" value={mentor.MentorID} placeholder="MentorID" type="number" tabIndex="1" required autofocus/>
+        </fieldset>
+        <fieldset>
+          <input onChange={(e)=>handle(e)} id="MentorNAME" value={mentor.MentorNAME} placeholder="MentorNAME" type="text"  tabIndex="2" required autofocus/>
+        </fieldset>
+        <fieldset>
+          <input onChange={(e)=>handle(e)} id="MentorEMAIL" value={mentor.MentorEMAIL} placeholder="MentorEMAIL" type="text"  tabIndex="3" required autofocus/>
+        </fieldset>
+        <fieldset>
+          <input onChange={(e)=>handle(e)} id="MentorPH" value={mentor.MentorPH} placeholder="MentorPH" type="text"  tabIndex="4" required autofocus/>
+        </fieldset>
+        <fieldset>
+          <input onChange={(e)=>handle(e)} id="MentorLINKEDIN" value={mentor.MentorLINKEDIN} placeholder="MentorLINKEDIN" type="text"  tabIndex="5" required autofocus/>
+        </fieldset>
+        <fieldset>
+          <input onChange={(e)=>handle(e)} id="MentorINSTA" value={mentor.MentorINSTA} placeholder="MentorINSTA" type="text"  tabIndex="6" required autofocus/>
+        </fieldset>
+        <fieldset>
+          <input onChange={(e)=>handle(e)} id="MentorPM" value={mentor.MentorPM} placeholder="MentorPM" type="text"  tabIndex="7" required autofocus/>
+        </fieldset>
+        <button name="submit" type="submit" id="contact-submit" >Submit</button>
       </form>
     </div>
+    </body>
   )
 }
 export default AddMentor;

@@ -1,0 +1,62 @@
+.addmentor-container {
+    z-index: 2;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(0, 0, 0, 0.7);
+    transition: display 2s ease;
+  }
+  .containerneww {
+    position: relative;
+    margin: auto;
+    width: 17px;
+    padding: 10px 120px 10px 10px;
+    background: rgb(126, 185, 180);
+    background-clip: padding-box;
+    h1 {
+      margin-top: 10px;
+      color: white;
+      
+    }
+  }
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h1 {
+      margin-top: 10px;
+      color: white;
+      
+    }
+    
+    button {
+      
+    /* border: 0.1px solid rgb(209, 82, 82); */
+      margin-left: -370px;
+      border-radius: 10px;
+      width: 120px;
+      height: 30px;
+      font-weight: bold 1;
+      font-size: 18px;
+      background-color: #dc143c;
+      color: white;
+      cursor: pointer;
+      border: 1px solid crimson;
+      transition: all 0.3s ease;
+    }
+    button:hover {
+      font-size: 14px;
+      background-color: #fff;
+      color: black;
+      border: 2px solid black;
+    }
+  }
+  .mentorlist {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }

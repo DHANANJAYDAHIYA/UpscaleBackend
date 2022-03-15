@@ -1,39 +1,25 @@
 import "./App.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
-import React, {useState} from "react";
+import React from "react";
+
+import {Route, Switch} from "react-router-dom";
+
+//Components Import
 import Navbar from "./Components/Navbar/Navbar.jsx";
-import AddMentor from "./Components/AddMentor/AddMentor.jsx";
-import MentorCard from "./Components/MentorCard/MentorCard";
-import SearchBar from "./Components/SearchBar/SearchBar.jsx"
+import Home from "./Components/Home/Home.js";
+import Quest from "./Components/QuestPage/quest.js";
 function App() {
-  const [addmentorOpen, setaddmentorOpen] = useState(true);
-  const handleAddMentor = () => {
-    console.log(addmentorOpen);
-    setaddmentorOpen(!addmentorOpen);
-  };
   return (
-      <div className="App">
-        <Navbar />
-
-        <SearchBar />
-
-        <div className="addmentor-container" style={addmentorOpen === true ? {display: "none"} : {}}>
-          <AddMentor 
-            setaddmentorOpen={setaddmentorOpen} addmentorOpen={addmentorOpen} 
-            
-          />
-        </div>
-
-        <div className="container">
-          
-          <button type="button" className="button" onClick={handleAddMentor}>Add Mentor</button>
-         
-        </div>
-        <div className="containerneww">
-         <h1>Mentors</h1>
-         </div>
-        <MentorCard />
-      </div>
+    <>
+    <div className="App">
+    <Navbar/>
+      <Switch>
+        <Route exact path='/' component={Home}/>
+        <Route path='/quest' component={Quest}/>
+        {/* <Route component={Error}/> */}
+      </Switch>
+    </div>
+    </>
   );
 }
 

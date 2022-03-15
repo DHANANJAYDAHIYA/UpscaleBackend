@@ -5,26 +5,26 @@ import Axios from 'axios';
 function AddMentor(){
   const url="http://localhost:8090/api/MentorEle/add";
   const [mentor, setmentor]= useState({
-    MentorID: 0,
-    MentorNAME: "",
-    CreatedOn: "",
-    MentorEMAIL: "",
-    MentorPH: "",
-    MentorLINKEDIN: "",
-    MentorINSTA: "",
-    MentorPM: ""
+    Name: "",
+    Email: "",
+    Description: "",
+    Placements: "",
+    Image: "",
+    Phone: "",
+    Linkedin: "",
+    Insta: ""
   })
   function submit(e){
     e.preventDefault();
     Axios.post(url, {
-      MentorID :mentor.MentorID,
-      MentorNAME :mentor.MentorNAME,
-      CreatedOn :mentor.CreatedOn,
-      MentorEMAIL :mentor.MentorEMAIL,
-      MentorPH :mentor.MentorPH,
-      MentorLINKEDIN :mentor.MentorLINKEDIN,
-      MentorINSTA :mentor.MentorINSTA,
-      MentorPM :mentor.MentorPM
+      Name :mentor.Name,
+      Email :mentor.Email,
+      Description :mentor.Description,
+      Placements :mentor.Placements,
+      Image :mentor.Image,
+      Phone :mentor.Phone,
+      Linkedin :mentor.Linkedin,
+      Insta :mentor.Insta
     }) 
   }
   function handle(e){
@@ -41,26 +41,30 @@ function AddMentor(){
         <h3>Add New Mentor</h3>
         <h4>Fill all the details in the form</h4>
         <fieldset>
-          <input onChange={(e)=>handle(e)} id="MentorID" value={mentor.MentorID} placeholder="MentorID" type="number" tabIndex="1" required autofocus/>
+          <input onChange={(e)=>handle(e)} id="Name" value={mentor.Name} placeholder="Name" type="text"  tabIndex="1" required autofocus/>
         </fieldset>
         <fieldset>
-          <input onChange={(e)=>handle(e)} id="MentorNAME" value={mentor.MentorNAME} placeholder="MentorNAME" type="text"  tabIndex="2" required autofocus/>
+          <input onChange={(e)=>handle(e)} id="Email" value={mentor.Email} placeholder="Email" type="text"  tabIndex="2" required autofocus/>
         </fieldset>
         <fieldset>
-          <input onChange={(e)=>handle(e)} id="MentorEMAIL" value={mentor.MentorEMAIL} placeholder="MentorEMAIL" type="text"  tabIndex="3" required autofocus/>
+          <input onChange={(e)=>handle(e)} id="Description" value={mentor.Description} placeholder="Description" type="text"  tabIndex="3" required autofocus/>
         </fieldset>
         <fieldset>
-          <input onChange={(e)=>handle(e)} id="MentorPH" value={mentor.MentorPH} placeholder="MentorPH" type="text"  tabIndex="4" required autofocus/>
+          <input onChange={(e)=>handle(e)} id="Placements" value={mentor.Placements} placeholder="Placements" type="text"  tabIndex="4" required autofocus/>
         </fieldset>
         <fieldset>
-          <input onChange={(e)=>handle(e)} id="MentorLINKEDIN" value={mentor.MentorLINKEDIN} placeholder="MentorLINKEDIN" type="text"  tabIndex="5" required autofocus/>
+          <input onChange={(e)=>handle(e)} id="Image" value={mentor.Image} placeholder="Image" accept="image/*" type="file"  tabIndex="5" required autofocus/>
         </fieldset>
         <fieldset>
-          <input onChange={(e)=>handle(e)} id="MentorINSTA" value={mentor.MentorINSTA} placeholder="MentorINSTA" type="text"  tabIndex="6" required autofocus/>
+          <input onChange={(e)=>handle(e)} id="Phone" value={mentor.Phone} placeholder="Phone" type="text"  tabIndex="6" required autofocus/>
         </fieldset>
         <fieldset>
-          <input onChange={(e)=>handle(e)} id="MentorPM" value={mentor.MentorPM} placeholder="MentorPM" type="text"  tabIndex="7" required autofocus/>
+          <input onChange={(e)=>handle(e)} id="Linkedin" value={mentor.Linkedin} placeholder="Linkedin" type="text"  tabIndex="7" required autofocus/>
         </fieldset>
+        <fieldset>
+          <input onChange={(e)=>handle(e)} id="Insta" value={mentor.Insta} placeholder="Insta" type="text"  tabIndex="8" required autofocus/>
+        </fieldset>
+        
         <button name="submit" type="submit" id="contact-submit" >Submit</button>
       </form>
     </div>

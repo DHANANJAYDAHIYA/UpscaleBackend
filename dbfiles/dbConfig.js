@@ -1,8 +1,8 @@
 const config= {
-    user:'UpscaleAdmin',
+    user:'UpscaleM',
     password: 'Upscale', //
     server: 'ACERNITRO5',
-    database: 'Master',
+    database: 'MentorInfo',
     options: {
         trustServerCertificate: true,
         trustedconnections: false,

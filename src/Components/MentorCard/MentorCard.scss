@@ -1,8 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600");
+$green: #2ecc71;$textcolor: #00120b;
+;
+$lightgray: #5c6863;
+$lighter: #ccc;
+$font-family: "Poppins", sans-serif;
+ $colors:  #F44336, #E91E63, #9C27B0, #009688, #3F51B5, #2196F3, #4CAF50, #FF5722,  #9E9E9E, #607D8B ;
 
 *{
     padding: 0;
     margin: 0;
+    
 }
 
 
@@ -69,12 +77,15 @@
 /* God of war image and heart-background*/
 .gow-img-div{
     background-color: #4D77FF;
+    
 }
 
 .gow-img-div img{
+  
     width: 65%;
     transform: translateY(7.5%);
-    /* background-color: whitesmoke; */
+    border-radius:80px 80px 80px 80px;
+    background-color: whitesmoke;
 }
 
 .card-1 .like-icon-div{

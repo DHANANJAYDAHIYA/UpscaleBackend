@@ -9,7 +9,6 @@ var bodyParser = require('body-parser');
 var cors = require('cors');
 var app = express();
 var router = express.Router();
-
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors());
@@ -25,6 +24,7 @@ router.use((request,response,next)=>{
 router.route('/MentorEle').get((request,response)=>{
 
     dboperations.getMentors().then(result => {
+      //  console.log(result[0]);
        response.json(result[0]);
     })
 
@@ -50,7 +50,7 @@ router.route('/MentorEle/add').post((request,response)=>{
        response.json(result);
     })
 
-   //  response.json(Mentor);
+    console.log("SUCCESSFULLY ADDED");
 
 })
 
@@ -64,6 +64,7 @@ router.route('/MentorEle/delete/:id').get((request,response)=>{
    
 })
 
+//--------------------------------------------------------------------------------------//
 
 var port = process.env.PORT || 8090;
 app.listen(port);

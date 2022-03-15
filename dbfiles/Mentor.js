@@ -1,23 +1,26 @@
 class Mntor{
     constructor
     (
-        MentorID ,
-        MentorNAME ,
-        CreatedOn ,
-        MentorEMAIL ,
-        MentorPH ,
-        MentorLINKEDIN ,
-        MentorINSTA ,
-        MentorPM 
+        ID
+        ,Name
+        ,Email
+        ,Description
+        ,Placements
+        ,Image
+        ,Phone
+        ,Linkedin
+        ,Insta
     ){
-        this.MentorID = MentorID;
-        this.MentorNAME = MentorNAME;
-        this.CreatedOn = CreatedOn;
-        this.MentorEMAIL = MentorEMAIL;
-        this.MentorPH = MentorPH;
-        this.MentorLINKEDIN = MentorLINKEDIN;
-        this.MentorINSTA = MentorINSTA;
-        this.MentorPM = MentorPM;
+
+        this.ID = ID;
+        this.Name = Name;
+        this.Email = Email;
+        this.Description= Description;
+        this.Placements = Placements;
+        this.Image = Image;
+        this.Phone = Phone;
+        this.Linkedin = Linkedin;
+        this.Insta = Insta;
         
     }
 }

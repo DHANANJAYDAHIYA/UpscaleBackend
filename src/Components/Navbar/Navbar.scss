@@ -1,9 +1,14 @@
-.navbar {
-  padding:  20px;
-  width: 100%;
-  color: white;
-  background-color: rgb(1, 1, 59);
-  border: 1px solid black;
-  position: left;
-  z-index: 1000;
+// .navbar {
+//   padding:  20px;
+//   width: 100%;
+//   color: white;
+//   background-color: #266E73;
+//   // border: 1px solid black;
+//   position: left;
+//   z-index: 1000;
+// }
+.nav-item {
+  font-weight:bold;
+  font-size: 15px;
+  margin-right: 5px;
 }

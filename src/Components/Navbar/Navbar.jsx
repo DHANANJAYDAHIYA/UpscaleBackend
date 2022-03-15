@@ -2,37 +2,22 @@ import "./Navbar.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 const Navbar = () => {
   return (
-    <div className="navbar">
+        <nav class="navbar navbar-expand-md navbar-light bg-faded">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
       <div className="left">
-        <img src="https://www.linkpicture.com/q/final-logo.png" type="image" width="300" height="50"/>
-      </div>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown link
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
+     <img src="https://www.linkpicture.com/q/final-logo.png" type="image" width="300" height="50"/>
+     </div>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link active" href="/">Mentors <span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link" href="/quest">Problem Set</a>
+          <a class="nav-item nav-link disabled" href="#">Disabled</a>
+          <a class="nav-item nav-link disabled" href="#">Disabled</a>
         </div>
-      </li>
-    </ul>
-  </div>
-      <div className="right">
-        <h5>Login</h5>
       </div>
-    </div>
+    </nav>
   );
 };
 

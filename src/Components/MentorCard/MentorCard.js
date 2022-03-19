@@ -1,90 +1,111 @@
 import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./MentorCard.scss";
+import Collapsible from "../MentorCard/collapsible.js"
 // Buffer.from('anything','base64');
 import Axios  from "axios";
-const UseEffectAPI = () => {
+const UseEffectAPI = () => 
+{
 
   const [mentors, setmentors] = useState([]);
-  const getMentors = async () => {
+  const [searchTerm, setSearchTerm] = useState("");
+  const getMentors = async () => 
+  {
     const response = await fetch("http://localhost:8090/api/MentorEle");
     setmentors(await response.json());
   };
-  const deleteMentr= (id)=>{
+  const deleteMentr= (id)=>
+  {
     // let url = "http://localhost:8090/api/MentorEle/delete/" ;
     Axios.get(`http://localhost:8090/api/MentorEle/delete/${id}`)
-    .then(() => {
-      return document.location.reload();
-  })
+    .then(() => {return document.location.reload();})
   }
-  useEffect(() => {
-    getMentors();
-  }, []);
+  function search(curElem) {
+       return 
+  }
+  useEffect(() => {getMentors();}, []);
   // let base64ImageString = 
   return (
     <>
+      <form className="search ">
+        <input type="text" 
+          id="search-bar" 
+          placeholder="Start Searching by Name / Company"
+          onChange={(event)=>{setSearchTerm(event.target.value); console.log(searchTerm);}}
+        />
+        <a href=""><img className="search-icon" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"/></a>
+      </form>
+      
+      <Collapsible className="collapsible-btn"/>
       <div className="container-fluid mt-5">
         <div className="row text-center">
-          {mentors.map((curElem) => {
-            return (
-              <div className="col-10 col-md-2 mt-5" key={curElem.Id}>
-                <div class="container1">
-                  <div class="card-1 p-2 card-div">
-                    <div class="like-icon-div "></div>
-                    <div class="gow-img-div img-div">
+          { 
+            mentors.filter((curElem) => {
+              if(searchTerm=="") return curElem
+              else if(curElem.Name.toLowerCase().includes(searchTerm.toLowerCase()))
+              {
+                return curElem
+              }
+            }
+          ).map(curElem => (
+              <div className="col-10 col-md-2 mt-5" key={curElem.ID}>
+                <div className="container1">
+                  <div className="card-1 p-2 card-div">
+                    <div className="like-icon-div "></div>
+                    <div className="gow-img-div img-div">
                       <img
                         src="https://freesvg.org/img/publicdomainq-business-man-strong.png"
                         alt="god-of-war-figurine"
                       />
                       {/* <img src={"data:image/jpg;base64,"+ Buffer.from(curElem.Image).toString('base64')} />  */}
                     </div>
-                    <div class="text-container">
-                      <div class="container2">
-                        <div class="content">
+                    <div className="text-container">
+                      <div className="container2">
+                        <div className="content">
                           <h1>{curElem.Name}</h1>
                           <hr />
                           <h4> Placed at: {curElem.Placements}</h4>
                           {/* <h4> Skills: c++, dsAlgo, ReactJS</h4> */}
-                          <div class="options">
+                          <div className="options">
                             <p>
                               Zombie ipsum reversus ab viral inferno, nam rick
                               grimes malum cerebro.
                             </p>
                           </div>
-                          <div class="media">
+                          <div className="media">
                             <ul>
                               <li>
-                                <a class="twitter" href="#">
+                                <a className="twitter" href="#">
                                   <span></span>
                                   <span></span>
                                   <span></span>
                                   <span></span>
                                   <i
-                                    class="fa fa-twitter"
+                                    className="fa fa-twitter"
                                     aria-hidden="true"
                                   ></i>
                                 </a>
                               </li>
                               <li>
-                                <a class="instagram" href="#">
+                                <a className="instagram" href="#">
                                   <span></span>
                                   <span></span>
                                   <span></span>
                                   <span></span>
                                   <i
-                                    class="fa fa-instagram"
+                                    className="fa fa-instagram"
                                     aria-hidden="true"
                                   ></i>
                                 </a>
                               </li>
                               <li>
-                                <a class="trash"  onClick={()=>deleteMentr(curElem.Id)}>
+                                <a className="trash"  onClick={()=>deleteMentr(curElem.ID)}>
                                   <span></span>
                                   <span></span>
                                   <span></span>
                                   <span></span>
                                   <i
-                                    class="fa fa-trash"
+                                    className="fa fa-trash"
                                     aria-hidden="true"
                                   ></i>
                                 </a>
@@ -98,8 +119,8 @@ const UseEffectAPI = () => {
                   </div>
                 </div>
               </div>
-            );
-          })}
+          ))
+          }
         </div>
       </div>
     </>

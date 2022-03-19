@@ -1,0 +1,53 @@
+.containermark{
+    height: 100%;
+    width: 100vh;
+    
+    /* float: center; */
+    background-color: white;
+    margin: 10px 10px 1000px 100px;
+}
+.form-containermark{
+    width: 50;
+    
+    margin: 20px 20px 20px 20px;
+    padding:20px 20px 20px 20px;
+    /* width:100vh; */
+}
+.center-div{
+    width :80vw;
+    /* padding-top: 100px; */
+    display:grid;
+    
+}
+.headingnew{
+    
+    width:20vh;
+    margin-top: 10px;
+    padding: 10px 10px 10px 10px;
+    background-color: rgb(75, 141, 127);
+    opacity: 0.6;
+    color: white;
+    border-radius: 5px;
+}
+.left-side,.right-side{
+    
+    width:91.5vh;
+    margin-bottom: 50px;
+    /* border:1px solid black; */
+    font-size:25px;
+    padding: 10px 20px;
+    background-color: rgb(201, 201, 201);
+    border-radius: 10px;
+}
+
+.left-side{
+    background-color: rgb(37, 37, 37);
+    
+    height: 10em;
+    color:rgb(91, 165, 149);
+    /* color: aliceblue; */
+}
+
+a{
+    color:blue;
+}

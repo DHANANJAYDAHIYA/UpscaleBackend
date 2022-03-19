@@ -1,6 +1,7 @@
 import "./Navbar.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 const Navbar = () => {
+  
   return (
         <nav class="navbar navbar-expand-md navbar-light bg-faded">
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">

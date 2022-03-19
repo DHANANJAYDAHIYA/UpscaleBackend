@@ -9,6 +9,15 @@ var bodyParser = require('body-parser');
 var cors = require('cors');
 var app = express();
 var router = express.Router();
+const multer  = require('multer')
+var storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, '/public/data')
+    }
+})
+var uploadMentor = multer({
+   storage: storage 
+})
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors());
@@ -42,11 +51,20 @@ router.route('/MentorEle/:id').get((request,response)=>{
 
 //--------------------------------------------------------------------------------------//
 //ADD MENTOR API
-router.route('/MentorEle/add').post((request,response)=>{
+router.route('/MentorEle/add').post(uploadMentor.single('Image'),(request,response)=>{
 
     let Mentor = {...request.body}
-
-    dboperations.addMentor(Mentor).then(result => {
+    dboperations.addMentor(
+         Mentor.Name =Mentor.Name,
+         Mentor.Email =Mentor.Email,
+         Mentor.Placements =Mentor.Placements,
+         Mentor.Description =Mentor.Description,
+         Mentor.Phone =Mentor.Phone,
+         Mentor.Linkedin =Mentor.Linkedin,
+         Mentor.Insta =Mentor.Insta,
+         Mentor.Image= request.file.filename
+       ).then(result => {
+       
        response.json(result);
     })
 

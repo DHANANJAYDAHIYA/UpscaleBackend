@@ -34,10 +34,10 @@ function AddMentor(){
     console.log(newmentor);
   }
   return(
-    <body>
+    <div className="addmentor">
     <div className="container">
       {/* <button onClick={setaddmentorOpen = {true}}></button> */}
-      <form id= "contact" onSubmit={(e) => submit(e)}>
+      <form id= "contact" enctype="multipart/form-data" onSubmit={(e) => submit(e)}>
         <h3>Add New Mentor</h3>
         <h4>Fill all the details in the form</h4>
         <fieldset>
@@ -53,7 +53,7 @@ function AddMentor(){
           <input onChange={(e)=>handle(e)} id="Placements" value={mentor.Placements} placeholder="Placements" type="text"  tabIndex="4" required autofocus/>
         </fieldset>
         <fieldset>
-          <input onChange={(e)=>handle(e)} id="Image" value={mentor.Image} placeholder="Image" accept="image/*" type="file"  tabIndex="5" required autofocus/>
+          <input onChange={(e)=>handle(e)} id="Image" name="Image" value={mentor.Image} placeholder="Image" type="file"  tabIndex="5" required autofocus/>
         </fieldset>
         <fieldset>
           <input onChange={(e)=>handle(e)} id="Phone" value={mentor.Phone} placeholder="Phone" type="text"  tabIndex="6" required autofocus/>
@@ -68,7 +68,7 @@ function AddMentor(){
         <button name="submit" type="submit" id="contact-submit" >Submit</button>
       </form>
     </div>
-    </body>
+    </div>
   )
 }
 export default AddMentor;

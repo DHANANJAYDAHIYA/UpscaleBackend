@@ -1,11 +1,9 @@
 import React from 'react'
-import SearchBar from "../SearchBar/SearchBar.jsx";
+import Markdown from '../MarkdownEditor/collapsible.js'
 
 const Home = () => {
     return (
-        <div>
-            <h1> Neww page</h1>
-        </div>
+        <Markdown className="markdownbox"/>
     )
 }
 export default Home

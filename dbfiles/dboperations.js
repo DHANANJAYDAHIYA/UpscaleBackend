@@ -19,8 +19,8 @@ async function getMentor(MentorId) {
     try {
         let pool = await sql.connect(config);
         let mentorpro = await pool.request()
-            .input('input_parameter', sql.Int, MentorId)
-            .query("SELECT * from MentorInfo where Id = @input_parameter");
+            .input('input_parameter', sql.VarChar, MentorId)
+            .query("SELECT * from Mentors where Id = @input_parameter");
         return mentorpro.recordsets;
 
     }
@@ -59,8 +59,8 @@ async function deleteMentor(MentorId) {
     try {
         let pool = await sql.connect(config);
         let mentorpro = await pool.request()
-            .input('input_parameter', sql.Int, MentorId)
-            .query("DELETE from MentorInfo where MentorIDPR = @input_parameter");
+            .input('input_parameter', sql.UniqueIdentifier, MentorId)
+            .query("DELETE from Mentors where ID = @input_parameter");
         return mentorpro.recordsets;
 
     }

@@ -30,7 +30,7 @@ const UseEffectAPI = () =>
       <form className="search ">
         <input type="text" 
           id="search-bar" 
-          placeholder="Start Searching by Name / Company"
+          placeholder="Start Searching by Name / Company / AGE"
           onChange={(event)=>{setSearchTerm(event.target.value); console.log(searchTerm);}}
         />
         <a href=""><img className="search-icon" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"/></a>
